@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
+@section('title', 'Lista de Videojuegos')
+
 @section('content')
 <div class="container">
-    <h1>Lista de Videojuegos</h1>
+    <h1 class="my-4">Lista de Videojuegos</h1>
     <a href="{{ route('videojuegos.create') }}" class="btn btn-primary mb-3">Crear Nuevo Videojuego</a>
-    <table class="table">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Título</th>
@@ -13,6 +15,7 @@
                 <th>Desarrollador</th>
                 <th>Reseñas</th>
                 <th>Etiquetas</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -37,14 +40,14 @@
                     </ul>
                 </td>
                 <td>
-                    <a href="{{ route('videojuegos.edit', $videojuego->id) }}" class="btn btn-warning">Editar</a>
+                    <a href="{{ route('videojuegos.edit', $videojuego->id) }}" class="btn btn-warning btn-sm">Editar</a>
                 </td>
-                
             </tr>
             @endforeach
         </tbody>
     </table>
 </div>
 @endsection
+
 
 

@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Lista de Desarrolladores</h1>
+    <a href="{{ route('desarrolladores.create') }}" class="btn btn-primary mb-3">Crear Desarrollador</a>
     <table class="table">
         <thead>
             <tr>
@@ -21,3 +22,5 @@
     </table>
 </div>
 @endsection
+
+

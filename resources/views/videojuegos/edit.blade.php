@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
+@section('title', 'Editar Videojuego')
+
 @section('content')
 <div class="container">
-    <h1>Editar Videojuego</h1>
+    <h1 class="my-4">Editar Videojuego</h1>
 
     <form action="{{ route('videojuegos.update', $videojuego->id) }}" method="POST">
         @csrf
@@ -31,17 +33,19 @@
             <label for="etiquetas">Etiquetas</label>
             <select class="form-control" id="etiquetas" name="etiquetas[]" multiple>
                 @foreach($etiquetas as $etiqueta)
-                    <option value="{{ $etiqueta->id }}" {{ in_array($etiqueta->id, $videojuego->etiquetas->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $etiqueta->nombre }}</option>
+                    <option value="{{ $etiqueta->id }}" {{ $videojuego->etiquetas->contains($etiqueta->id) ? 'selected' : '' }}>{{ $etiqueta->nombre }}</option>
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Actualizar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 
-    <form action="{{ route('videojuegos.destroy', $videojuego->id) }}" method="POST" style="margin-top: 20px;">
+    <form action="{{ route('videojuegos.destroy', $videojuego->id) }}" method="POST" class="mt-3">
         @csrf
         @method('DELETE')
-        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que deseas eliminar este videojuego?')">Eliminar</button>
+        <button type="submit" class="btn btn-danger">Eliminar Videojuego</button>
     </form>
 </div>
 @endsection
+
+

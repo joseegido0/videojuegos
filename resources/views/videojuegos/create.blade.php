@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
+@section('title', 'Crear Videojuego')
+
 @section('content')
 <div class="container">
-    <h1>Crear Nuevo Videojuego</h1>
-
+    <h1 class="my-4">Crear Videojuego</h1>
     <form action="{{ route('videojuegos.store') }}" method="POST">
         @csrf
         <div class="form-group">
@@ -34,7 +35,7 @@
                 @endforeach
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Crear</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
 </div>
 @endsection

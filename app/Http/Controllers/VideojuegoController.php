@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class VideojuegoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra una lista de los recursos.
      */
     public function index()
     {

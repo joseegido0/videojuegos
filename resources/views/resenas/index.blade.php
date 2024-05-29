@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
+@section('title', 'Lista de Reseñas')
+
 @section('content')
 <div class="container">
-    <h1>Lista de Reseñas</h1>
-    <table class="table">
+    <h1 class="my-4">Lista de Reseñas</h1>
+    <a href="{{ route('resenas.create') }}" class="btn btn-primary mb-3">Crear Nueva Reseña</a>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Usuario</th>
@@ -23,3 +26,4 @@
     </table>
 </div>
 @endsection
+

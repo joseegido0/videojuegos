@@ -10,6 +10,7 @@ class Resena extends Model
     use HasFactory;
 
     protected $fillable = ['videojuego_id', 'usuario', 'contenido', 'puntuacion'];
+    protected $table = 'resenas';
 
     public function videojuego()
     {

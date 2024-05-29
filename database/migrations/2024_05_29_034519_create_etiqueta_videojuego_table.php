@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('videojuego_etiqueta', function (Blueprint $table) {
-            $table->id();
+        Schema::create('etiqueta_videojuego', function (Blueprint $table) {
             $table->unsignedBigInteger('videojuego_id');
             $table->unsignedBigInteger('etiqueta_id');
-            $table->timestamps();
             
             $table->foreign('videojuego_id')->references('id')->on('videojuegos')->onDelete('cascade');
             $table->foreign('etiqueta_id')->references('id')->on('etiquetas')->onDelete('cascade');
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('videojuego_etiqueta');
+        Schema::dropIfExists('etiqueta_videojuego');
     }
 };

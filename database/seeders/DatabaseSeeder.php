@@ -17,8 +17,8 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         $this->call(DesarrolladorSeeder::class);
-        $this->call(VideojuegoSeeder::class);
-        $this->call(ResenaSeeder::class);
         $this->call(EtiquetaSeeder::class);
+        $this->call(ResenaSeeder::class);
+        $this->call(VideojuegoSeeder::class);
     }
 }

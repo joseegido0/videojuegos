@@ -12,8 +12,8 @@ class VideojuegoController extends Controller
      */
     public function index()
     {
-        $videojuegos = Videojuego::all();
-          return view('videojuegos.index' ,compact('videojuegos'));
+        $videojuegos = Videojuego::with('desarrollador', 'resenas', 'etiquetas')->get(); // Cargar las relaciones
+        return view('videojuegos.index', compact('videojuegos'));
     }
-
 }
+

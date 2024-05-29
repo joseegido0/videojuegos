@@ -10,6 +10,7 @@ class Etiqueta extends Model
     use HasFactory;
 
     protected $fillable = ['nombre'];
+    protected $table = 'etiquetas';
 
     public function videojuegos()
     {

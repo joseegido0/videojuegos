@@ -12,6 +12,7 @@
                 <th>Usuario</th>
                 <th>Contenido</th>
                 <th>Puntuación</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +21,9 @@
                 <td>{{ $resena->usuario }}</td>
                 <td>{{ $resena->contenido }}</td>
                 <td>{{ $resena->puntuacion }}</td>
+                <td>
+                    <a href="{{ route('resenas.edit', $resena->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                </td>
             </tr>
             @endforeach
         </tbody>

@@ -10,12 +10,16 @@
         <thead>
             <tr>
                 <th>Nombre</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($etiquetas as $etiqueta)
             <tr>
                 <td>{{ $etiqueta->nombre }}</td>
+                <td>
+                    <a href="{{ route('etiquetas.edit', $etiqueta->id) }}" class="btn btn-warning btn-sm">Editar</a> <!-- Botón para editar -->
+                </td>
             </tr>
             @endforeach
         </tbody>

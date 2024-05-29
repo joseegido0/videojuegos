@@ -14,6 +14,3 @@ Route::resource('videojuegos', VideojuegoController::class);
 Route::resource('desarrolladores', DesarrolladorController::class);
 Route::resource('resenas', ResenaController::class);
 Route::resource('etiquetas', EtiquetaController::class);
-Route::put('/desarrolladores/{desarrollador}', [DesarrolladorController::class, 'update'])->name('desarrolladores.update');
-
-

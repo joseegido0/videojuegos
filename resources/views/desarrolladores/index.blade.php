@@ -9,6 +9,7 @@
             <tr>
                 <th>Nombre</th>
                 <th>Apellido</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -16,11 +17,15 @@
             <tr>
                 <td>{{ $desarrollador->nombre }}</td>
                 <td>{{ $desarrollador->apellido }}</td>
+                <td>
+                    <a href="{{ route('desarrolladores.edit', $desarrollador->id) }}" class="btn btn-warning btn-sm">Editar</a> <!-- Botón para editar -->
+                </td>
             </tr>
             @endforeach
         </tbody>
     </table>
 </div>
 @endsection
+
 
 

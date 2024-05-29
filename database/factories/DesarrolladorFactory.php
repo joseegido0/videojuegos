@@ -20,7 +20,7 @@ class DesarrolladorFactory extends Factory
     {
         return [
             'nombre' => $this->faker->firstName(),
-            'apellidos' => $this->faker->lastName()
+            'apellido' => $this->faker->lastName()
         ];
     }
 }

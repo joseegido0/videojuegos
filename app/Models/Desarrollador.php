@@ -9,7 +9,7 @@ class Desarrollador extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'apellidos'];
+    protected $fillable = ['nombre', 'apellido'];
     protected $table = 'desarrolladores';
 
     public function videojuegos()

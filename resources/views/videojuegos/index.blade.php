@@ -3,6 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Lista de Videojuegos</h1>
+    <a href="{{ route('videojuegos.create') }}" class="btn btn-primary mb-3">Crear Nuevo Videojuego</a>
     <table class="table">
         <thead>
             <tr>
@@ -35,6 +36,10 @@
                         @endforeach
                     </ul>
                 </td>
+                <td>
+                    <a href="{{ route('videojuegos.edit', $videojuego->id) }}" class="btn btn-warning">Editar</a>
+                </td>
+                
             </tr>
             @endforeach
         </tbody>

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('desarrolladores', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('apellidos');
+            $table->string('apellido');
             $table->timestamps();
         });
     }

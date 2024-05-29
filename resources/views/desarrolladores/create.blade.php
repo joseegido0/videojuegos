@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+    <div class="mb-3 py-3">
+        <a href="{{ route('desarrolladores.index') }}" class="btn btn-secondary">Volver</a>
+    </div>
     <div class="card">
         <div class="card-header">
             <h1 class="card-title">Crear Desarrollador</h1>

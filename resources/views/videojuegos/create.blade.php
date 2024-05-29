@@ -4,6 +4,9 @@
 
 @section('content')
 <div class="container">
+    <div class="mb-3 py-3">
+        <a href="{{ route('videojuegos.index') }}" class="btn btn-secondary">Volver</a>
+    </div>
     <h1 class="my-4">Crear Videojuego</h1>
 
     <!-- Mostrar alert si hay errores de validación -->

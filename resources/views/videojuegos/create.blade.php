@@ -5,6 +5,25 @@
 @section('content')
 <div class="container">
     <h1 class="my-4">Crear Videojuego</h1>
+
+    <!-- Mostrar alert si hay errores de validación -->
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+    <!-- Mostrar alert si el desarrollador ya tiene un videojuego asociado -->
+    @if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+    @endif
+
     <form action="{{ route('videojuegos.store') }}" method="POST">
         @csrf
         <div class="form-group">
@@ -23,7 +42,7 @@
             <label for="desarrollador_id">Desarrollador</label>
             <select class="form-control" id="desarrollador_id" name="desarrollador_id" required>
                 @foreach($desarrolladores as $desarrollador)
-                    <option value="{{ $desarrollador->id }}">{{ $desarrollador->nombre }}</option>
+                <option value="{{ $desarrollador->id }}">{{ $desarrollador->nombre }}</option>
                 @endforeach
             </select>
         </div>
@@ -31,7 +50,7 @@
             <label for="etiquetas">Etiquetas</label>
             <select class="form-control" id="etiquetas" name="etiquetas[]" multiple>
                 @foreach($etiquetas as $etiqueta)
-                    <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
+                <option value="{{ $etiqueta->id }}">{{ $etiqueta->nombre }}</option>
                 @endforeach
             </select>
         </div>
@@ -39,3 +58,4 @@
     </form>
 </div>
 @endsection
+
